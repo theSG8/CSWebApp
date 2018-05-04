@@ -1,20 +1,29 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Maestra.master.cs" Inherits="CSWebApp.Maestra" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Plantilla.master.cs" Inherits="Lab1WebApp.Plantilla" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
+    <link href="css/styles.css" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-</head>
+    <title>HADS</title>
+    <link href="css/estilos.css" rel="stylesheet" />
+    </head>
 <body>
-    <form id="form1" runat="server">
+    <h1 class="logo">Gestor de Proyectos</h1>
+    <nav class="center">
+        <asp:HyperLink  CssClass=link ID="hInicio" runat="server" NavigateUrl="~/Inicio.aspx">Inicio</asp:HyperLink>
+    </nav>
         <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <asp:ContentPlaceHolder  ID="ContentPlaceHolder" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-    </form>
+    <footer class="foot">
+        <p>Xabier Echezurieta -Álex López- Iván Valdés (CS18)</p>
+
+    </footer>
+
 </body>
+
+    
 </html>

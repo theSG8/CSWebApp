@@ -1,0 +1,66 @@
+﻿body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #ECECEC;
+
+}
+
+.logo {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.center {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.container {
+    border-color: black;
+    text-align: center;
+}
+
+nav {
+    margin: 4%;
+    padding-bottom: 0,5%;
+    border-bottom: 1px solid black;
+}
+
+.link {
+    text-decoration: none;
+    color: #3A539B;
+}
+
+    .link:hover {
+        color: #4B77BE;
+    }
+
+.foot {
+    font-size: 80%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.noAlign {
+    float: right;
+}
+
+.left {
+    border: solid black 1px;
+    float: left;
+    width: 19%;
+    margin-left: 0%;
+    height: 567px;
+}
+
+.right {
+    border: solid black 1px;
+    float: right;
+    width: 65%;
+    margin-right: 15%;
+    height: 567px;
+}
+
+.ToLeft {
+    float: left
+}
