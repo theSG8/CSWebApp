@@ -25,7 +25,12 @@ nav {
     padding-bottom: 0,5%;
     border-bottom: 1px solid black;
 }
-
+.navlink {
+    padding: 10px;
+    text-decoration: none;
+    color: #3A539B;
+    display: inline-block;
+}
 .link {
     text-decoration: none;
     color: #3A539B;

@@ -1,0 +1,11 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Maestra.Master" AutoEventWireup="true" CodeBehind="M_trabajador.master.cs" Inherits="CSWebApp.Trabajador.M_trabajador" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+      <asp:HyperLink  CssClass=navlink ID="HyperLink1" runat="server" NavigateUrl="~/Trabajador/ConsultarTarea.aspx">Consultar Tarea</asp:HyperLink>
+      <asp:HyperLink  CssClass=navlink ID="HyperLink2" runat="server" NavigateUrl="~/Trabajador/FianlizarTarea.aspx">Finalizar Tarea</asp:HyperLink>
+    <asp:HyperLink  CssClass=navlink ID="HyperLink4" runat="server" NavigateUrl="Login.aspx">Logout</asp:HyperLink>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+    <asp:ContentPlaceHolder ID="content" runat="server"> 
+
+    </asp:ContentPlaceHolder>
+</asp:Content>

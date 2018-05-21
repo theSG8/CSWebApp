@@ -1,0 +1,9 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Maestra.Master" AutoEventWireup="true" CodeBehind="M_anonimo.master.cs" Inherits="CSWebApp.M_anonimo" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:HyperLink  CssClass=navlink ID="hInicio" runat="server" NavigateUrl="Login.aspx">Inicio</asp:HyperLink>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+    <asp:ContentPlaceHolder ID="content" runat="server"> 
+
+    </asp:ContentPlaceHolder>
+</asp:Content>
