@@ -19,6 +19,7 @@ namespace CSWebApp
         {
             this.Paquetes = new HashSet<Paquete>();
             this.Solicituds = new HashSet<Solicitud>();
+            this.Tareas = new HashSet<Tarea>();
         }
     
         public int id { get; set; }
@@ -31,5 +32,7 @@ namespace CSWebApp
         public virtual ICollection<Paquete> Paquetes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Solicitud> Solicituds { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tarea> Tareas { get; set; }
     }
 }

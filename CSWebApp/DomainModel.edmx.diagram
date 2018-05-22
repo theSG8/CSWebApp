@@ -12,6 +12,7 @@
         <AssociationConnector Association="DomainModel.ResponsPaquete" ManuallyRouted="false" />
         <AssociationConnector Association="DomainModel.TareaPaquete" ManuallyRouted="false" />
         <AssociationConnector Association="DomainModel.UsuSolic" ManuallyRouted="false" />
+        <AssociationConnector Association="DomainModel.suTrabajador" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
