@@ -46,10 +46,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -59,6 +67,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -72,10 +81,27 @@
     <Content Include="Director\AñadirParticipantes.aspx" />
     <Content Include="Director\ModificarPaquetes.aspx" />
     <Content Include="Director\VisualizarSolicitudes.aspx" />
+    <Content Include="DomainModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DomainModel.edmx</DependentUpon>
+      <LastGenOutput>DomainModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DomainModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DomainModel.edmx</DependentUpon>
+      <LastGenOutput>DomainModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Login.aspx" />
     <Content Include="Maestra.Master" />
     <Content Include="M_anonimo.master" />
     <Content Include="Director\M_director.master" />
+    <EntityDeploy Include="DomainModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DomainModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DomainModel.edmx.diagram">
+      <DependentUpon>DomainModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Responsable\ConsultarDatos.aspx" />
     <Content Include="Responsable\ConsultarTareas.aspx" />
@@ -96,6 +122,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBHelper.cs" />
     <Compile Include="Director\AsignarResponsables.aspx.cs">
       <DependentUpon>AsignarResponsables.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -131,6 +158,21 @@
     <Compile Include="Director\VisualizarSolicitudes.aspx.designer.cs">
       <DependentUpon>VisualizarSolicitudes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DomainModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DomainModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DomainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DomainModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,6 +193,9 @@
     </Compile>
     <Compile Include="M_anonimo.master.designer.cs">
       <DependentUpon>M_anonimo.master</DependentUpon>
+    </Compile>
+    <Compile Include="Paquete.cs">
+      <DependentUpon>DomainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Responsable\ConsultarDatos.aspx.cs">
@@ -181,6 +226,12 @@
     <Compile Include="Responsable\SolicitarModificación.aspx.designer.cs">
       <DependentUpon>SolicitarModificación.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Solicitud.cs">
+      <DependentUpon>DomainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tarea.cs">
+      <DependentUpon>DomainModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Trabajador\ConsultarTarea.aspx.cs">
       <DependentUpon>ConsultarTarea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -202,9 +253,13 @@
     <Compile Include="Trabajador\M_trabajador.master.designer.cs">
       <DependentUpon>M_trabajador.master</DependentUpon>
     </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>DomainModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

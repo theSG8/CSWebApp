@@ -11,7 +11,7 @@ Contraseña:
 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="t_pass" Display="Dynamic" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
 <br />
 <p>
-    <asp:Button ID="Button1" runat="server" Height="48px"  Text="Loguearse" Width="264px" />
+    <asp:Button ID="Button1" runat="server" Height="48px"  Text="Loguearse" Width="264px" OnClick="Button1_Click" />
 </p>
 <p>
     <asp:Label ID="lerror" runat="server" Text=""></asp:Label>
