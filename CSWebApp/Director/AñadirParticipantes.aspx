@@ -26,6 +26,5 @@
     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="Button1" runat="server" Height="33px" Text="Añadir Participante" Width="158px" OnClick="Button1_Click" />
-    <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
     <br />
 </asp:Content>

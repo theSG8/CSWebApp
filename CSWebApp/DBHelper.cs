@@ -160,8 +160,8 @@ namespace CSWebApp
                 tar.nombre = nombre;
                 tar.des = des;
                 tar.hest = hest;
-                tar.hreales = hreales;
-                tar.hreales = hreales;
+               /* tar.hreales = hreales;
+                tar.hreales = hreales;*/
 
                 var tar2 = new Tarea
                 {

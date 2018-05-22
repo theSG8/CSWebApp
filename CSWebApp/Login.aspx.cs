@@ -25,7 +25,7 @@ namespace CSWebApp
 
             List<Paquete> a = DBHelper.GetPaquetesUsuarios(u);
 
-            DBHelper.InsertTarea("prueba", "aaa", 2.3f, DateTime.Now, "ahora?");
+            //DBHelper.InsertTarea("prueba", "aaa", 2.3f, DateTime.Now, "ahora?");
             System.Windows.Forms.MessageBox.Show("A");
             
 
