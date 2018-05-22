@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace CSWebApp.Director
 {
     public partial class AñadirParticipantes : System.Web.UI.Page
@@ -16,7 +17,8 @@ namespace CSWebApp.Director
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            DBHelper.InsertUsuario(nombret, "Valdes", DBHelper.director, "123");
+            DBHelper.InsertUsuario(nombreT.Text, "Valdes", DBHelper.director, "123");
+    
         }
     }
 }
