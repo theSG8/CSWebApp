@@ -13,5 +13,10 @@ namespace CSWebApp.Director
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            DBHelper.InsertUsuario(nombret, "Valdes", DBHelper.director, "123");
+        }
     }
 }
