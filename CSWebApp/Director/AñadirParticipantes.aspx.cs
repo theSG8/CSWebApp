@@ -16,7 +16,14 @@ namespace CSWebApp.Director
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            DBHelper.InsertUsuario(nombret, "Valdes", DBHelper.director, "123");
+            if (pass1T.Text == pass2T.Text)
+            {
+                DBHelper.InsertUsuario(nombreT.Text, ApellidosT.Text, DropDownList1.SelectedValue, pass1T.Text);
+            } else
+            {
+                System.Windows.Forms.MessageBox.Show("Las contraseñas tienen que coincidir");
+            }
+            
         }
     }
 }
