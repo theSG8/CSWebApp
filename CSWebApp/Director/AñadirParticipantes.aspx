@@ -13,8 +13,8 @@
     <asp:Label ID="Label3" runat="server" Text="Rol"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:DropDownList ID="DropDownList1" runat="server">
-        <asp:ListItem>Responsable</asp:ListItem>
-        <asp:ListItem>Trabajador</asp:ListItem>
+        <asp:ListItem Value="responsable">Responsable</asp:ListItem>
+        <asp:ListItem Value="trabajador">Trabajador</asp:ListItem>
     </asp:DropDownList>
     <br />
     Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

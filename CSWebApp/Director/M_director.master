@@ -4,7 +4,7 @@
     <asp:HyperLink  CssClass=navlink ID="HyperLink1" runat="server" NavigateUrl="~/Director/AñadirParticipantes.aspx">Añadir Participantes</asp:HyperLink>
     <asp:HyperLink  CssClass=navlink ID="HyperLink2" runat="server" NavigateUrl="~/Director/AsignarResponsables.aspx">Asignar Responsables</asp:HyperLink>
      <asp:HyperLink  CssClass=navlink ID="HyperLink3" runat="server" NavigateUrl="~/Director/VisualizarSolicitudes.aspx">Visualizar Solicitudes</asp:HyperLink>
-     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Log Out" Width="87px" />
+    <asp:HyperLink  CssClass=navlink ID="HyperLink4" runat="server" NavigateUrl="../Login.aspx?logout=1">Logout</asp:HyperLink>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <asp:ContentPlaceHolder ID="content" runat="server"> 

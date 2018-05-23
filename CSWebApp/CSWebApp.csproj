@@ -79,6 +79,7 @@
   <ItemGroup>
     <Content Include="Director\AsignarResponsables.aspx" />
     <Content Include="Director\AñadirParticipantes.aspx" />
+    <Content Include="Director\MainDirector.aspx" />
     <Content Include="Director\ModificarPaquetes.aspx" />
     <Content Include="Director\VisualizarSolicitudes.aspx" />
     <Content Include="DomainModel.Context.tt">
@@ -105,10 +106,12 @@
     <None Include="packages.config" />
     <Content Include="Responsable\ConsultarDatos.aspx" />
     <Content Include="Responsable\ConsultarTareas.aspx" />
+    <Content Include="Responsable\MainResponsable.aspx" />
     <Content Include="Responsable\M_responsable.master" />
     <Content Include="Responsable\SolicitarModificación.aspx" />
     <Content Include="Trabajador\ConsultarTarea.aspx" />
     <Content Include="Trabajador\FianlizarTarea.aspx" />
+    <Content Include="Trabajador\MainTrabajador.aspx" />
     <Content Include="Trabajador\M_trabajador.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -136,6 +139,13 @@
     </Compile>
     <Compile Include="Director\AñadirParticipantes.aspx.designer.cs">
       <DependentUpon>AñadirParticipantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Director\MainDirector.aspx.cs">
+      <DependentUpon>MainDirector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Director\MainDirector.aspx.designer.cs">
+      <DependentUpon>MainDirector.aspx</DependentUpon>
     </Compile>
     <Compile Include="Director\ModificarPaquetes.aspx.cs">
       <DependentUpon>ModificarPaquetes.aspx</DependentUpon>
@@ -212,6 +222,13 @@
     <Compile Include="Responsable\ConsultarTareas.aspx.designer.cs">
       <DependentUpon>ConsultarTareas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Responsable\MainResponsable.aspx.cs">
+      <DependentUpon>MainResponsable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Responsable\MainResponsable.aspx.designer.cs">
+      <DependentUpon>MainResponsable.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Responsable\M_responsable.master.cs">
       <DependentUpon>M_responsable.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,6 +262,13 @@
     </Compile>
     <Compile Include="Trabajador\FianlizarTarea.aspx.designer.cs">
       <DependentUpon>FianlizarTarea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Trabajador\MainTrabajador.aspx.cs">
+      <DependentUpon>MainTrabajador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Trabajador\MainTrabajador.aspx.designer.cs">
+      <DependentUpon>MainTrabajador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Trabajador\M_trabajador.master.cs">
       <DependentUpon>M_trabajador.master</DependentUpon>

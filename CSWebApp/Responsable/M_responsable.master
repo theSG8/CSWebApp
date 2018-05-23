@@ -3,7 +3,7 @@
     <asp:HyperLink  CssClass=navlink ID="HyperLink4" runat="server" NavigateUrl="~/Responsable/ConsultarTareas.aspx">Consultar Tareas</asp:HyperLink>
     <asp:HyperLink  CssClass=navlink ID="HyperLink1" runat="server" NavigateUrl="~/Responsable/ConsultarDatos.aspx">Consultar Datos</asp:HyperLink>
     <asp:HyperLink  CssClass=navlink ID="HyperLink2" runat="server" NavigateUrl="~/Responsable/SolicitarModificación.aspx">Solicitar Modificación</asp:HyperLink>
-    <asp:HyperLink  CssClass=navlink ID="HyperLink3" runat="server" NavigateUrl="Login.aspx">Logout</asp:HyperLink>
+    <asp:HyperLink  CssClass=navlink ID="HyperLink3" runat="server" NavigateUrl="../Login.aspx?logout=1">Logout</asp:HyperLink>
             
 
 </asp:Content>
