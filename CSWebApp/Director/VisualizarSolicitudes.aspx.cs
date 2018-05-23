@@ -16,5 +16,10 @@ namespace CSWebApp.Director
             GridView1.DataSource = list;
             GridView1.DataBind();
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -19,6 +19,7 @@ namespace CSWebApp.Director
             if (pass1T.Text == pass2T.Text)
             {
                 DBHelper.InsertUsuario(nombreT.Text, ApellidosT.Text, DropDownList1.SelectedValue, pass1T.Text);
+                System.Windows.Forms.MessageBox.Show("Participante añadido correctamente");
             } else
             {
                 System.Windows.Forms.MessageBox.Show("Las contraseñas tienen que coincidir");

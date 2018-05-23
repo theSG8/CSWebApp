@@ -30,7 +30,7 @@ namespace CSWebApp
             }
         }
 
-        public static void InsertPaquete(String nombre, float estimacion, Usuario responspaquete)
+        public static void InsertPaquete(String nombre, float estimacion, int responspaquete)
         {
             using (var context = new CSDB())
             {
@@ -40,7 +40,7 @@ namespace CSWebApp
                     estimacion = estimacion,
                 };
 
-                context.Usuarios.Find(responspaquete.id).Paquetes.Add(pqt); 
+                context.Usuarios.Find(responspaquete).Paquetes.Add(pqt); 
                 context.SaveChanges();
             }
         }
