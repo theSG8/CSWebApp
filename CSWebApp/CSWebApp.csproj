@@ -109,6 +109,7 @@
     <Content Include="Responsable\MainResponsable.aspx" />
     <Content Include="Responsable\M_responsable.master" />
     <Content Include="Responsable\SolicitarModificación.aspx" />
+    <Content Include="test.aspx" />
     <Content Include="Trabajador\ConsultarTarea.aspx" />
     <Content Include="Trabajador\FianlizarTarea.aspx" />
     <Content Include="Trabajador\MainTrabajador.aspx" />
@@ -248,6 +249,13 @@
     </Compile>
     <Compile Include="Tarea.cs">
       <DependentUpon>DomainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Trabajador\ConsultarTarea.aspx.cs">
       <DependentUpon>ConsultarTarea.aspx</DependentUpon>

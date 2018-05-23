@@ -3,15 +3,23 @@
 
     <div style="display:flex ;flex-direction:row ;flex-wrap:wrap" >
         <div id="left">
-            <asp:GridView ID="GridView1" runat="server">
+            <h1>Asignar tareas</h1>
+
+            <asp:GridView ID="GridView1" runat="server" DataSourceID="EntityDataSource1">
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
-            <asp:GridView ID="GridView2" runat="server">
+           
+        </div>
+        <div id="right">
+            <h1>Finalizar tareas</h1>
+         <asp:GridView ID="GridView2" runat="server">
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
+           </div>
+
+
         </div>
-        <div id="right">b</div>
-    </div>
+        
 
 
 </asp:Content>

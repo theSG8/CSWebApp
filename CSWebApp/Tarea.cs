@@ -24,7 +24,7 @@ namespace CSWebApp
         public System.DateTime fechaLim { get; set; }
         public string nombreP { get; set; }
         public bool finalizado { get; set; }
-        public int trabajador { get; set; }
+        public Nullable<int> trabajador { get; set; }
     
         public virtual Paquete Paquete { get; set; }
         public virtual Usuario Usuario { get; set; }

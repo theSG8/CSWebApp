@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -45,7 +46,7 @@ namespace CSWebApp
             }
         }
 
-        public static void InsertTarea(String nombre, string des,float hest, DateTime fechaLim,String nombreP,Usuario trabajador)
+        public static void InsertTarea(String nombre, string des,float hest, DateTime fechaLim,String nombreP)
         {
             using (var context = new CSDB())
             {
@@ -62,7 +63,7 @@ namespace CSWebApp
 
                 };
 
-                context.Usuarios.Find(trabajador.id).Tareas.Add(tar);
+                
                 context.Paquetes.Find(nombreP).TareasPaquete.Add(tar);
 
                 context.SaveChanges();
@@ -84,7 +85,8 @@ namespace CSWebApp
                 context.Usuarios.Find(director.id).Solicituds.Add(sol);
             }
         }
-        
+
+       
 
         #endregion
 
@@ -157,34 +159,13 @@ namespace CSWebApp
             }  
         }
 
-        public static void UpdateTarea(int tarea, String nombre, string des, float hest, DateTime fechaLim, String nombreP, Usuario trabajador)
+        public static void AsignarTrabajadorATarea(int trabajador, int tarea)
         {
             using (var context = new CSDB())
             {
-
-                var tar = context.Tareas.Find(nombreP);
-                tar.nombre = nombre;
-                tar.des = des;
-                tar.hest = hest;
-
-                var tar2 = new Tarea
-                {
-                    nombre = nombre,
-                    des = des,
-                    hest = hest,
-                    hreales = 0,
-                    progreso = 0,
-                    incidenc = "",
-                    fechaLim = fechaLim,
-                    finalizado = false
-
-                };
-
-                context.Usuarios.Find(trabajador.id).Tareas.Add(tar);
-                context.Paquetes.Find(nombreP).TareasPaquete.Add(tar);
-
+                var tar = context.Tareas.Find(tarea);
+                context.Usuarios.Find(trabajador).Tareas.Add(tar);
                 context.SaveChanges();
-
 
             }
         }
@@ -192,5 +173,7 @@ namespace CSWebApp
 
 
         #endregion
+
+
     }
 }

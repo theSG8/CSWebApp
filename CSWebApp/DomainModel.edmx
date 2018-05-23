@@ -35,7 +35,7 @@
           <Property Name="fechaLim" Type="datetime" Nullable="false" />
           <Property Name="nombreP" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="finalizado" Type="bit" Nullable="false" />
-          <Property Name="trabajador" Type="int" Nullable="false" />
+          <Property Name="trabajador" Type="int" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -60,7 +60,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="suTrabajador">
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
           <End Role="Tarea" Type="Self.Tarea" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -155,8 +155,8 @@
           <Property Name="nombreP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Paquete" Relationship="Self.TareaPaquete" FromRole="Tarea" ToRole="Paquete" />
           <Property Name="finalizado" Type="Boolean" Nullable="false" />
-          <Property Name="trabajador" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Usuario" Relationship="DomainModel.suTrabajador" FromRole="Tarea" ToRole="Usuario" />
+          <Property Name="trabajador" Type="Int32" />
+          <NavigationProperty Name="Usuario" Relationship="DomainModel.suTrabajador" FromRole="Tarea" ToRole="Usuario" a:SetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -230,7 +230,7 @@
           </AssociationSet>
         </EntityContainer>
         <Association Name="suTrabajador">
-          <End Type="DomainModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="DomainModel.Usuario" Role="Usuario" Multiplicity="0..1" />
           <End Type="DomainModel.Tarea" Role="Tarea" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
