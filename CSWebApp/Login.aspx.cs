@@ -17,20 +17,30 @@ namespace CSWebApp
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-           //DBHelper.InsertUsuario("Ivan", "Valdes", DBHelper.director, "123");
+            int id = Convert.ToInt32(t_email.Text);
+            String pass = t_pass.Text;
+            Usuario u = DBHelper.getUsuariobyID(id);
 
-             Usuario u = DBHelper.getUsuariobyID(2);
-            //System.Windows.Forms.MessageBox.Show(A);
-           // DBHelper.InsertPaquete("ahora?", 0.2f, u);
+            if (u!=null)
+            {
+                if (u.contr == pass)
+                {
+                    Session.Add("usuario",u);
+                    //Redirige a el que toque
+                    switch (u.rol)
+                    {
+                        case DBHelper.director:
+                            break;
+                        case DBHelper.responsable:
+                            break;
+                        case DBHelper.trabajador:
+                            break;
+                    }
+                }
+                
 
-            List<Paquete> a = DBHelper.GetPaquetesUsuarios(u);
-
-            DBHelper.InsertTarea("prueba", "aaa", 2.3f, DateTime.Now, "ahora?");
-            System.Windows.Forms.MessageBox.Show("A");
-
-
-
-        }
+            }
+        
 
 
 
