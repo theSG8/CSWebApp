@@ -3,30 +3,94 @@
     <asp:Label ID="Label1" runat="server" Text="Nombre Paquete:"></asp:Label>
     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
     <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 846px; top: 203px; position: absolute" Text="Nombre:"></asp:Label>
-    <asp:TextBox ID="TextBox4" runat="server" style="z-index: 1; left: 1007px; top: 199px; position: absolute"></asp:TextBox>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CS-18ConnectionString %>" SelectCommand="SELECT * FROM [Paquete]"></asp:SqlDataSource>
+    <asp:TextBox ID="TextBox4" runat="server" style="z-index: 1; left: 995px; top: 199px; position: absolute"></asp:TextBox>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CS-18ConnectionString %>" SelectCommand="SELECT * FROM [Paquete]" DeleteCommand="DELETE FROM [Paquete] WHERE [nombre] = @nombre" InsertCommand="INSERT INTO [Paquete] ([nombre], [estimacion], [respons]) VALUES (@nombre, @estimacion, @respons)" UpdateCommand="UPDATE [Paquete] SET [estimacion] = @estimacion, [respons] = @respons WHERE [nombre] = @nombre">
+    <DeleteParameters>
+        <asp:Parameter Name="nombre" Type="String" />
+    </DeleteParameters>
+    <InsertParameters>
+        <asp:Parameter Name="nombre" Type="String" />
+        <asp:Parameter Name="estimacion" Type="Single" />
+        <asp:Parameter Name="respons" Type="Int32" />
+    </InsertParameters>
+    <UpdateParameters>
+        <asp:Parameter Name="estimacion" Type="Single" />
+        <asp:Parameter Name="respons" Type="Int32" />
+        <asp:Parameter Name="nombre" Type="String" />
+    </UpdateParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:CS-18ConnectionString %>" SelectCommand="SELECT * FROM [Tarea]" DeleteCommand="DELETE FROM [Tarea] WHERE [id] = @id" InsertCommand="INSERT INTO [Tarea] ([nombre], [des], [hest], [hreales], [progreso], [incidenc], [fechaLim], [nombreP], [finalizado], [trabajador]) VALUES (@nombre, @des, @hest, @hreales, @progreso, @incidenc, @fechaLim, @nombreP, @finalizado, @trabajador)" UpdateCommand="UPDATE [Tarea] SET [nombre] = @nombre, [des] = @des, [hest] = @hest, [hreales] = @hreales, [progreso] = @progreso, [incidenc] = @incidenc, [fechaLim] = @fechaLim, [nombreP] = @nombreP, [finalizado] = @finalizado, [trabajador] = @trabajador WHERE [id] = @id">
+        <DeleteParameters>
+            <asp:Parameter Name="id" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="nombre" Type="String" />
+            <asp:Parameter Name="des" Type="String" />
+            <asp:Parameter Name="hest" Type="Single" />
+            <asp:Parameter Name="hreales" Type="Single" />
+            <asp:Parameter Name="progreso" Type="Int32" />
+            <asp:Parameter Name="incidenc" Type="String" />
+            <asp:Parameter Name="fechaLim" Type="DateTime" />
+            <asp:Parameter Name="nombreP" Type="String" />
+            <asp:Parameter Name="finalizado" Type="Boolean" />
+            <asp:Parameter Name="trabajador" Type="Int32" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="nombre" Type="String" />
+            <asp:Parameter Name="des" Type="String" />
+            <asp:Parameter Name="hest" Type="Single" />
+            <asp:Parameter Name="hreales" Type="Single" />
+            <asp:Parameter Name="progreso" Type="Int32" />
+            <asp:Parameter Name="incidenc" Type="String" />
+            <asp:Parameter Name="fechaLim" Type="DateTime" />
+            <asp:Parameter Name="nombreP" Type="String" />
+            <asp:Parameter Name="finalizado" Type="Boolean" />
+            <asp:Parameter Name="trabajador" Type="Int32" />
+            <asp:Parameter Name="id" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
     <br />
     Estimación:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
     <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 845px; top: 234px; position: absolute" Text="Descripción:"></asp:Label>
-<asp:TextBox ID="TextBox5" runat="server" style="z-index: 1; left: 1007px; top: 230px; position: absolute"></asp:TextBox>
+<asp:TextBox ID="TextBox5" runat="server" style="z-index: 1; left: 996px; top: 230px; position: absolute"></asp:TextBox>
     <br />
     Responsable:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-    <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 845px; top: 259px; position: absolute" Text="Horas Estimadas:"></asp:Label>
-<asp:TextBox ID="TextBox6" runat="server" style="z-index: 1; left: 1005px; top: 257px; position: absolute"></asp:TextBox>
-<asp:GridView ID="GridView2" runat="server" style="z-index: 1; left: 813px; top: 367px; position: absolute; height: 158px; width: 259px">
+    <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 840px; top: 259px; position: absolute" Text="Horas Estimadas:"></asp:Label>
+<asp:TextBox ID="TextBox6" runat="server" style="z-index: 1; left: 997px; top: 257px; position: absolute"></asp:TextBox>
+<asp:GridView ID="GridView2" runat="server" style="z-index: 1; left: 777px; top: 400px; position: absolute; height: 158px; width: 259px" AutoGenerateColumns="False" AutoGenerateDeleteButton="True" AutoGenerateEditButton="True" DataKeyNames="id" DataSourceID="SqlDataSource2" Visible="False">
+    <Columns>
+        <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+        <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
+        <asp:BoundField DataField="des" HeaderText="des" SortExpression="des" />
+        <asp:BoundField DataField="hest" HeaderText="hest" SortExpression="hest" />
+        <asp:BoundField DataField="hreales" HeaderText="hreales" SortExpression="hreales" />
+        <asp:BoundField DataField="progreso" HeaderText="progreso" SortExpression="progreso" />
+        <asp:BoundField DataField="incidenc" HeaderText="incidenc" SortExpression="incidenc" />
+        <asp:BoundField DataField="fechaLim" HeaderText="fechaLim" SortExpression="fechaLim" />
+        <asp:BoundField DataField="nombreP" HeaderText="nombreP" SortExpression="nombreP" />
+        <asp:CheckBoxField DataField="finalizado" HeaderText="finalizado" SortExpression="finalizado" />
+        <asp:BoundField DataField="trabajador" HeaderText="trabajador" SortExpression="trabajador" />
+    </Columns>
 </asp:GridView>
+    <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 845px; top: 318px; position: absolute" Text="Nombre Paquete:"></asp:Label>
+    <asp:TextBox ID="TextBox8" runat="server" style="z-index: 1; left: 999px; top: 317px; position: absolute"></asp:TextBox>
     <br />
     <asp:Button ID="Button3" runat="server" Height="37px" OnClick="Button3_Click" Text="Añadir Paquete" style="z-index: 1; left: 10px; top: 323px; position: absolute" />
     <asp:Button ID="Button2" runat="server" Height="37px" OnClick="Button2_Click" Text="Ver Paquetes" Width="167px" style="z-index: 1; left: 181px; top: 322px; position: absolute" />
     <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 846px; top: 289px; position: absolute" Text="Fecha Limite:"></asp:Label>
-<asp:TextBox ID="TextBox7" runat="server" style="z-index: 1; left: 1006px; top: 287px; position: absolute"></asp:TextBox>
+<asp:TextBox ID="TextBox7" runat="server" style="z-index: 1; left: 997px; top: 287px; position: absolute" TextMode="DateTime"></asp:TextBox>
     <br />
-    <asp:Button ID="Button4" runat="server" Height="38px" OnClick="Button4_Click" style="z-index: 1; left: 838px; top: 320px; position: absolute" Text="Añadir Tarea" Width="171px" />
-<asp:Button ID="Button5" runat="server" Height="37px" style="z-index: 1; left: 1016px; top: 319px; position: absolute" Text="Ver Tareas" Width="171px" />
+    <asp:Button ID="Button4" runat="server" Height="38px" OnClick="Button4_Click" style="z-index: 1; left: 829px; top: 350px; position: absolute" Text="Añadir Tarea" Width="171px" />
+<asp:Button ID="Button5" runat="server" Height="37px" style="z-index: 1; left: 1001px; top: 351px; position: absolute" Text="Ver Tareas" Width="171px" OnClick="Button5_Click" />
     <br />
 <br />
-<asp:GridView ID="GridView1" runat="server" style="z-index: 1; left: 48px; top: 368px; position: absolute; height: 158px; width: 259px" DataSourceID="SqlDataSource1" Visible="False">
+<asp:GridView ID="GridView1" runat="server" style="z-index: 1; left: 48px; top: 368px; position: absolute; height: 158px; width: 259px" DataSourceID="SqlDataSource1" Visible="False" AutoGenerateDeleteButton="True" AutoGenerateEditButton="True" AutoGenerateColumns="False" DataKeyNames="nombre" >
+    <Columns>
+        <asp:BoundField DataField="nombre" HeaderText="nombre" ReadOnly="True" SortExpression="nombre" />
+        <asp:BoundField DataField="estimacion" HeaderText="estimacion" SortExpression="estimacion" />
+        <asp:BoundField DataField="respons" HeaderText="respons" SortExpression="respons" />
+    </Columns>
 </asp:GridView>
 </asp:Content>
