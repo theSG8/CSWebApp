@@ -12,7 +12,11 @@ namespace CSWebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["logout"] != null)
+            {
+                Session.Abandon();
+                lerror.Text = "Se ha cerrado la sesión";
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -26,19 +30,30 @@ namespace CSWebApp
                 if (u.contr == pass)
                 {
                     Session.Add("usuario", u);
-                    //Redirige a el que toque
                     switch (u.rol)
                     {
                         case DBHelper.director:
+                            Response.Redirect("Director/MainDirector.aspx");
                             break;
                         case DBHelper.responsable:
+                            Response.Redirect("Responsable/MainResponsable.aspx");
                             break;
                         case DBHelper.trabajador:
+                            Response.Redirect("Trabajador/MainTrabajador.aspx");
                             break;
                     }
+
+                }
+                else
+                {
+                    lerror.Text = "Contraseña Incorrecta";
                 }
 
 
+            }
+            else
+            {
+                lerror.Text = "El usuario no existe";
             }
 
 
