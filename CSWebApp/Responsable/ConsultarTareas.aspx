@@ -7,7 +7,7 @@
 
             <asp:GridView ID="GridView1" runat="server" DataSourceID="EntityDataSource1">
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" OnSelecting="SqlDataSource1_Selecting" ConnectionString="<%$ ConnectionStrings:CS-18ConnectionString %>" SelectCommand="SELECT [id], [nombre], [des], [hest], [fechaLim], [nombreP] FROM [Tarea] WHERE ([trabajador] IS NULL)"></asp:SqlDataSource>
            
         </div>
         <div id="right">
