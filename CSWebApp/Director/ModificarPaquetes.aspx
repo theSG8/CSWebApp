@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="content" runat="server">
     <asp:Label ID="Label1" runat="server" Text="Nombre Paquete:"></asp:Label>
     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-    <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 617px; top: 203px; position: absolute" Text="Label"></asp:Label>
     <br />
     Estimación:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>

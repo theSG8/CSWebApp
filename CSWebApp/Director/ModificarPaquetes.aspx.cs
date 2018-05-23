@@ -16,7 +16,7 @@ namespace CSWebApp.Director
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            List<Solicitud> list = DBHelper.GetPaquetes();
+            List<Paquete> list = DBHelper.GetPaquetes();
             GridView1.DataSource = list;
             GridView1.DataBind();
             GridView1.Visible = true;

@@ -21,11 +21,11 @@ namespace CSWebApp
             String pass = t_pass.Text;
             Usuario u = DBHelper.getUsuariobyID(id);
 
-            if (u!=null)
+            if (u != null)
             {
                 if (u.contr == pass)
                 {
-                    Session.Add("usuario",u);
+                    Session.Add("usuario", u);
                     //Redirige a el que toque
                     switch (u.rol)
                     {
@@ -37,12 +37,13 @@ namespace CSWebApp
                             break;
                     }
                 }
-                
+
 
             }
-        
 
 
 
+
+        }
     }
 }
