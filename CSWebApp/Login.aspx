@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/M_anonimo.master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CSWebApp.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content" runat="server">
-    Email:
+    ID:
 <asp:TextBox ID="t_email" runat="server"></asp:TextBox>
 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="t_email" Display="Dynamic" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="t_email" Display="Dynamic" ErrorMessage="Introduzca un email válido" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="t_email" Display="Dynamic" ErrorMessage="Introduzca una ID válida" ForeColor="Red" ValidationExpression="\d+"></asp:RegularExpressionValidator>
 <br />
 Contraseña:
 <asp:TextBox ID="t_pass" runat="server" TextMode="Password"></asp:TextBox>

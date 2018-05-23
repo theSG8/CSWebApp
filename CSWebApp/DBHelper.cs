@@ -7,9 +7,9 @@ namespace CSWebApp
 {
     public static class DBHelper
     {
-        public static String director = "director";
-        public static String responsable = "responsable";
-        public static String trabajador = "trabajador";
+        public  const String director = "director";
+        public  const String responsable = "responsable";
+        public  const String trabajador = "trabajador";
 
 
         #region Inserts
@@ -135,7 +135,13 @@ namespace CSWebApp
                 return context.Usuarios.Find(id).Solicituds.ToList<Solicitud>();
             }
         }
-
+        public static List<Paquete> GetPaquetes()
+        {
+            using (var context = new CSDB())
+            {
+                return context.Paquetes.ToList<Paquete>();
+            }
+        }
         #endregion
 
         #region Updaters
@@ -160,8 +166,6 @@ namespace CSWebApp
                 tar.nombre = nombre;
                 tar.des = des;
                 tar.hest = hest;
-               /* tar.hreales = hreales;
-                tar.hreales = hreales;*/
 
                 var tar2 = new Tarea
                 {
@@ -184,6 +188,7 @@ namespace CSWebApp
 
             }
         }
+
 
 
         #endregion
