@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
 namespace CSWebApp.Director
 {
     public partial class AñadirParticipantes : System.Web.UI.Page
@@ -17,8 +16,14 @@ namespace CSWebApp.Director
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            DBHelper.InsertUsuario(nombreT.Text, "Valdes", DBHelper.director, "123");
-    
+            if (pass1T.Text == pass2T.Text)
+            {
+                DBHelper.InsertUsuario(nombreT.Text, ApellidosT.Text, DropDownList1.SelectedValue, pass1T.Text);
+            } else
+            {
+                System.Windows.Forms.MessageBox.Show("Las contraseñas tienen que coincidir");
+            }
+            
         }
     }
 }
